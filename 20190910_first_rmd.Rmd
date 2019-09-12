@@ -4,6 +4,9 @@ output: html_document
 ---
   
   I'm an R Markdown document! 
+  ```{r load library}
+  library(tidyverse)
+  ```
 
 # Section 1
 
@@ -30,8 +33,8 @@ I can take the mean of the sample, too!
   The mean is `r mean(samp)`.
   
 # Section 3
-
-```{r named code chunk}
+## This code doesn't work
+```{r named code chunk, eval=FALSE}
 dataframe1 = rnorm(500)
 
 countif(dataframe1 > 0)
@@ -39,14 +42,12 @@ countif(dataframe1 > 0)
 print(dataframe1)
 
 ggplot(dataframe1)
-
-
 ```
+## This is the solution
 ```{r solution}
 la_df = tibble(
-  sample = rnorm(500)
-  gr_th_0 = sample > 0
+  sample = rnorm(500),
+  gr_th_0 = sample>0,
   abs_bvalue = abs(sample)
-)
 )
 ```
