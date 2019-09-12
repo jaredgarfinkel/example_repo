@@ -1,0 +1,52 @@
+---
+title: "Simple document"
+output: html_document
+---
+  
+  I'm an R Markdown document! 
+
+# Section 1
+
+Here's section 1
+
+## Subsection 1.1
+
+two asterisks make text bold, underscores make text italic
+
+a line break is required to print on a separate line
+So, this is the same line
+
+Here's a **code chunk** that samples from 
+a _normal distribution_:
+  
+  ```{r}
+samp = rnorm(100)
+length(samp)
+```
+
+# Section 2
+
+I can take the mean of the sample, too!
+  The mean is `r mean(samp)`.
+  
+# Section 3
+
+```{r named code chunk}
+dataframe1 = rnorm(500)
+
+countif(dataframe1 > 0)
+
+print(dataframe1)
+
+ggplot(dataframe1)
+
+
+```
+```{r solution}
+la_df = tibble(
+  sample = rnorm(500)
+  gr_th_0 = sample > 0
+  abs_bvalue = abs(sample)
+)
+)
+```
